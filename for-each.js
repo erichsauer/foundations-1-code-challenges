@@ -16,8 +16,15 @@ Output:
 ['spot', 'rover', 'jumpy', 'einstein']
 */
 
-export function makeArrayOfNames(arr) {
-    return [];
+export function makeArrayOfNames(arr)
+{
+    const arrayOfNames = [];
+    arr.forEach(({ name }) =>
+    {
+        arrayOfNames.push(name);
+        return arrayOfNames;
+    });
+    return arrayOfNames;
 }
 
 /*
@@ -26,8 +33,15 @@ Output:
 ['cat', 'frog', 'dog', 'dog']
 */
 
-export function makeReversedArrayOfTypes(arr) {
-    return [];
+export function makeReversedArrayOfTypes(arr)
+{
+    const reversedArrayOfTypes = [];
+    arr.forEach(({ type }) =>
+    {
+        reversedArrayOfTypes.push(type);
+        return reversedArrayOfTypes;
+    });
+    return reversedArrayOfTypes.reverse();
 }
 
 /*
@@ -41,7 +55,14 @@ Output:
 ]
 */
 
-export function makeSpanishLanguageArray(arr) {
-    return [];
+export function makeSpanishLanguageArray(arr)
+{
+    const spanishLanguageArray = [];
+    arr.forEach(({ name, type }) =>
+    {
+        spanishLanguageArray.push({ nombre: name, tipo: type });
+        return spanishLanguageArray;
+    });
+    return spanishLanguageArray;
 }
 

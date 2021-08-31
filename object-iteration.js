@@ -23,8 +23,9 @@ etc
 (we cannot control the order that these appear in without extra work, so any of these outputs are acceptable)
 */
 
-export function makeWeirdStringFromKeys(someObject) {
-    return '';
+export function makeWeirdStringFromKeys(someObject)
+{
+    return Object.keys(someObject).join('');
 }
 
 
@@ -37,8 +38,21 @@ Output:
 }
 */
 
-export function makeMoreScreamingKeys(someObject) {
-    return {};
+export function makeMoreScreamingKeys(someObject)
+{
+    const screamingObject = {};
+    const keys = Object.keys(someObject);
+
+    keys.forEach((key) => screamingObject[ key.toUpperCase() ] = someObject[key]);
+    return screamingObject;
+
+    // for(let key in someObject)
+    // {
+    //     const upperKey = key.toUpperCase();
+    //     someObject[ upperKey ] = someObject[ key ];
+    //     delete someObject[key];
+    // }
+    // return someObject;
 }
 
 /*
@@ -51,5 +65,5 @@ Output:
 */
 
 export function makeTuples(someObject) {
-    return [];
+    return Object.entries(someObject);
 }
